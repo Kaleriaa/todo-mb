@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+export const Wrapper = styled.div`
+    display: flex;
+    align-items: center;
+    height: 50px;
+`
+
 export const Input = styled.input`
     appearance: none;
     border: none;

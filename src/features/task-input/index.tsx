@@ -1,6 +1,7 @@
 import { addTask } from '@entities/task/model'
+import { Arrow } from '@features/task-toggle'
 import React from 'react'
-import { Input } from './styled'
+import { Input, Wrapper } from './styled'
 
 export const TaskInput = () => {
     const [value, setValue] = React.useState<string>('')
@@ -16,11 +17,14 @@ export const TaskInput = () => {
     }
 
     return (
-        <Input
-            placeholder="What needs to be done?"
-            onChange={(e) => getValue(e.target.value)}
-            value={value}
-            onKeyDown={onEnterDown}
-        />
+        <Wrapper>
+            <Arrow />
+            <Input
+                placeholder="What needs to be done?"
+                onChange={(e) => getValue(e.target.value)}
+                value={value}
+                onKeyDown={onEnterDown}
+            />
+        </Wrapper>
     )
 }

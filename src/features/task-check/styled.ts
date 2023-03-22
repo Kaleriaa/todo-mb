@@ -5,13 +5,17 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     border-top: 1.5px solid var(--light-grey);
-    label {
-        display: grid;
-        grid-template-columns: 1em auto;
-        gap: 25px;
-        font-size: 20.5px;
-        color: var(--dark-text);
-    }
+`
+export const Label = styled.label<{ isClosed: boolean }>`
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 25px;
+    font-size: 21px;
+    color: ${(props) =>
+        props.isClosed ? 'var(--light-grey)' : 'var(--dark-text)'};
+    text-decoration-line: ${(props) =>
+        props.isClosed ? 'line-through' : 'none'};
+    text-decoration-thickness: 1px;
 `
 export const CheckBox = styled.input`
     appearance: none;
@@ -25,21 +29,27 @@ export const CheckBox = styled.input`
     place-content: center;
     ::before {
         content: '';
-        width: 27px;
-        height: 27px;
+        width: 26px;
+        height: 26px;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
         clip-path: polygon(
-            84.62% 14.6%,
-            46.63% 66.56%,
-            17.55% 44.5%,
-            19.76% 41.37%,
-            45.76% 61.1%,
-            81.53% 12.18%
+            72.93% 21.1%,
+            42.35% 72.87%,
+            22.28% 52.87%,
+            25.06% 50.09%,
+            41.07% 66.04%,
+            68.98% 18.77%
         );
         background-color: var(--check-color);
     }
-    :checked::before {
-        transform: scale(1);
+    :checked {
+        border-color: #cee0dc;
+        ::before {
+            transform: scale(1);
+        }
+    }
+    :focus {
+        outline: none;
     }
 `

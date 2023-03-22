@@ -1,10 +1,12 @@
+import { $filter, updateFilter } from '@entities/filter/model'
 import { $tasksLeft, clearCompleted } from '@entities/task/model'
 import { useUnit } from 'effector-react'
 import { filtersValue } from './constant'
 import { Clear, LeftItems, Panel, RadioGroup } from './styled'
+import React from 'react'
 
 export const Filters = () => {
-    const tasksLeft = useUnit($tasksLeft)
+    const [tasksLeft, filter] = useUnit([$tasksLeft, $filter])
 
     return (
         <Panel>
@@ -17,6 +19,8 @@ export const Filters = () => {
                             id={item}
                             name="filter"
                             value={item}
+                            checked={item === filter}
+                            onChange={() => updateFilter(item)}
                         />
                         <label htmlFor={item}>{item}</label>
                     </RadioGroup>

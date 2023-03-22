@@ -1,4 +1,4 @@
-import { Tasks } from '@widgets/task-list/ui/list'
+import { Tasks } from '@widgets/todos-block'
 import React from 'react'
 import { Container, Label } from './ui/styled'
 

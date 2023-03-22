@@ -25,6 +25,6 @@
             "@constants/*": ["shared/constants/*"]
         }
     },
-    "include": ["src"],
+    "include": ["src", "vitest.setup.js"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,4 +1,5 @@
 import { createEvent, createStore, sample } from 'effector'
+import { useStore } from 'effector-react'
 import { Task } from '../type'
 import { generateId } from '../utils'
 
@@ -37,3 +38,8 @@ export const $tasksLeft = sample({
     source: $tasks,
     fn: (tasks) => tasks.filter((t) => !t.isClosed),
 })
+
+export const useTask = (taskId: string) => {
+    const tasks = useStore($tasks)
+    return tasks.find(({ id }) => id === taskId)
+}

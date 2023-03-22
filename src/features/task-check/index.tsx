@@ -1,24 +1,25 @@
 import { toggleTask } from '@entities/task/model'
 import { Task as TaskType } from '@entities/task/type'
-import { CheckBox, Wrapper } from './styled'
+import { CheckBox, Label, Wrapper } from './styled'
 
-export const Task: React.FC<TaskType> = ({ id, text }) => {
+export const Task: React.FC<TaskType> = ({ id, text, isClosed }) => {
     const onCheck = () => {
         toggleTask(id)
     }
 
     return (
         <Wrapper>
-            <label htmlFor={id}>
+            <Label isClosed={isClosed} htmlFor={id}>
                 <CheckBox
                     type="checkbox"
                     onChange={onCheck}
                     id={id}
                     name={id}
                     value={text}
+                    checked={isClosed}
                 />
                 {text}
-            </label>
+            </Label>
         </Wrapper>
     )
 }
