@@ -10,6 +10,9 @@
 
 A simple Todo App made with React, Typescript, Effector and Vite.
 
+## GitHub Pages
+[RUN HERE](https://kaleriaa.github.io/todo-mb/)
+
 ## Installation
 
 Clone this repository and run `npm i`.
@@ -25,9 +28,6 @@ Run `npm start` to start the development server.
 ## Testing
 
 This project uses Jest for testing. To run the tests, use `npm test`.
-
-## GitHub Pages
-[RUN HERE](https://kaleriaa.github.io/todo-mb/)
 
 ## Dependencies
 This project uses the following dependencies:
